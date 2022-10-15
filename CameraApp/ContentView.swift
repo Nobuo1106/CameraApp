@@ -22,7 +22,6 @@ struct ContentView: View {
                 }
                 HStack {
                     Spacer()
-                    Image(/*@START_MENU_TOKEN@*/"Image Name"/*@END_MENU_TOKEN@*/)
                     Button(action: {
                         self.isPicking = true
                     }){
@@ -32,7 +31,7 @@ struct ContentView: View {
                 }
             }
             if isPicking {
-                ImagePicker()
+                ImagePicker(image:$image, isPicking: $isPicking)
                 Rectangle()
                     .edgesIgnoringSafeArea(.all)
                     .transition(.move(edge: .bottom))
